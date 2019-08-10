@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    
+    int T;
+    int hr;
+    int m;
+    int SM,SH,EH,EM;
+    cin>>T;
+    int HH,MM,temp,End,Start;
+    
+    for(int i=0;i<T;i++){
+        
+        cin>>SH>>SM>>EH>>EM;
+        Start=SM+(SH*60);
+    End=EM+(EH*60);
+     temp=End-Start;
+     HH=temp/60;
+    MM=temp-(temp/60)*60;
+
+    cout<<HH<<" "<<MM<<"\n";
+    }
+    
+}
