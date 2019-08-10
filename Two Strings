@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    int T;
+    cin>>T;
+    
+    for(int i=0;i<T;i++){
+        string str2,str1;
+        cin>>str1>>str2;
+        if(str1.size()!=str2.size()){
+            cout<<"NO"<<"\n";
+            continue;
+        }
+        
+        int n = str1.size();
+        int m = str2.size();
+        map<char,int> mp;
+        for(int j=0;j<n;j++){
+            
+            
+            mp[str1[j]]++;
+            
+            
+            
+        }
+        
+        
+        int j;
+        for(j =0;j<m;j++){
+        
+            if(mp.end()!=mp.find(str2[j])){
+                
+                if(mp[str2[j]]<=0){
+                    break;
+                }
+                else{
+                    --mp[str2[j]];
+                }
+                
+            }
+            else{
+                break;
+            }
+            
+        }
+        
+        if(j<m){
+            cout<<"NO"<<"\n";
+        }
+        else{
+            cout<<"YES"<<"\n";
+        }
+    }
+    
+}
