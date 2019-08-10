@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    
+    int d,x;
+    int actual=0;
+    int distance_cap;
+    float r;
+    int count=0;
+    cin>>d;
+    float perimeter = 0;
+    for(int i=0;i<d;i++){
+        cin>>r>>x;
+        //cout<<r<<" "<<x;
+        perimeter = float(2)*(float(22)/float(7))*r;
+        //cout<<" "<<perimeter;
+        
+        distance_cap = 100*x;
+        //cout<<" "<<distance_cap<<"\n";
+        if(perimeter<=distance_cap){
+        count = count + 1;
+        }
+        
+        
+        
+    }
+    
+    cout<<count;
+    
+   
+}
