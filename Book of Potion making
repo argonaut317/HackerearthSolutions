@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    
+    long long int A;
+    cin>>A;
+    int value=0;
+    
+    int n=0;
+    int final=0;
+    int i =10;
+    
+    
+    while(A){
+        
+        value= A%10;
+         final =final + i*value;
+        // cout<<value<<" ";
+         ++n;
+         --i;
+        A = A/10;
+        
+    }
+    
+    //cout<<"\n"<<final;
+    if(n!=10){
+        
+        cout<<"Illegal ISBN";
+        
+        
+    }
+    else if(final%11==0){
+        cout<<"Legal ISBN";
+    }
+    else{
+        cout<<"Illegal ISBN";
+    }
+    
+}
