@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    int N;
+    cin>>N;
+    int i=1;
+    
+    while(N>=0){
+        
+        if(N>=(i)){
+        N = N - i;
+        //cout<<N<<"  (1)  ";
+        }
+        else{
+            cout<<"Patlu";
+            break;
+        }
+        
+        if(N==0){
+            cout<<"Patlu";
+            break;
+        }        
+        
+        if(N>=(2*i)){
+        N = N - 2*i;
+        //cout<<N<<" [2] ";
+        }
+        else{
+            cout<<"Motu";
+            break;
+        }
+        
+        if(N==0){
+            cout<<"Motu";
+            break;
+        }
+        
+        ++i;
+        
+    }
+    
+    
+}
