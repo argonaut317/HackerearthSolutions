@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    int T;
+    cin>>T;
+    int arr[T];
+    for(int i=0;i<T;i++){
+        
+        cin>>arr[i];
+        
+    }
+    int lift_1 = 0;
+    int lift_2 = 7;
+    
+    for(int i=0;i<T;i++){
+        
+        int floor_call = arr[i];
+        
+        if(abs(floor_call - lift_1)<abs(floor_call - lift_2)){
+            lift_1 = floor_call;
+            cout<<"A"<<"\n";
+        }
+        else if(abs(floor_call-lift_2)<abs(floor_call -lift_1)){
+            lift_2 = floor_call;
+            cout<<"B"<<"\n";
+        }
+        else if(abs(floor_call - lift_1)==abs(floor_call - lift_2)){
+
+                if(lift_1>lift_2){
+                    lift_2 = floor_call;
+                    cout<<"B"<<"\n";
+                }
+                
+                else{
+                    lift_1 = floor_call;
+                    cout<<"A"<<"\n";
+                }
+        }
+    }
+    
+    
+}
