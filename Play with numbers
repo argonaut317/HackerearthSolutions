@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+ 
+ long long int N,Q,L,R;
+ 
+ cin>>N>>Q;
+ long long int arr[N];
+ long long int s[N];
+ long long int sum  =0;
+ for(long long int i=1;i<=N;i++){
+     
+     cin>>arr[i];
+     s[i] = arr[i]+sum;
+     sum = s[i];
+ }
+ sum = 0;
+ long long int final;
+ long long int number;
+ long long int mean;
+ for(long long int i=0;i<Q;i++){
+     
+     cin>>L>>R;
+     
+    if(L==1){
+        
+        final = s[R];
+        
+    }
+    else{
+        final = s[R] - s[L-1];
+    }
+     number = R-L+1;
+     mean = floor((final)/number);
+     cout<<mean<<"\n";
+     
+ }
+ 
+    
+}
