@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    
+    int N;
+    string str;
+    
+    cin>>str;
+    cin>>N;
+    
+    for(int i=0;i<str.size();i++){
+        
+        if(str[i]>=48&&str[i]<=57){
+            str[i] =(( (str[i]-'0')+N)%10)+'0';
+        }
+        else if(str[i]>=65&&str[i]<=90){
+            str[i] =(( (str[i]-'A')+N)%26)+'A';
+        }
+        else if(str[i]>=97&&str[i]<=122){
+            str[i] =(( (str[i]-'a')+N)%26)+'a';
+         
+        }
+    }
+    
+    cout<<str;
+    
+    
+}
