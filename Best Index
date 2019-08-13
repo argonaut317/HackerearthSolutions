@@ -1,0 +1,59 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int count(int x, int n){
+    
+    int c=0,j=2;
+    
+    while(x<=n){
+        
+        x = x +j;
+        j++;
+        
+        
+    }
+    
+    c = x-j+1;
+    return c;
+}
+
+int main(){
+    
+    int N;
+    cin>>N;
+    long long int arr[N+1];
+    
+    long long int b[N+1];
+    
+    for(int i=1;i<=N;i++){
+        cin>>arr[i];
+        b[i]=0;
+    
+    }
+    b[0] = 0;
+    b[1] = arr[1];
+    for(int i=2;i<=N;i++){
+        
+        b[i] = arr[i] + b[i-1];
+        
+        
+    }
+  long long int ans;
+   long long int maxx = INT_MIN;
+    for(int i=1;i<=N;i++){
+         
+            int idx = count(i,N);
+            ans = b[idx] - b[i-1];
+            
+            if(ans>maxx){
+                maxx=ans;
+            }
+            
+        }
+        
+    
+    
+    
+    
+    cout<<maxx;
+}
