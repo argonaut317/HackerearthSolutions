@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef unsigned long long int ull;
+
+int main(){
+    
+    
+    int t;
+    cin>>t;
+    ull c,n,sum;
+    while(t--){
+        
+        cin>>c>>n;
+        
+        sum = n + ((n-1)*n)/2;
+        
+        if(c<sum){
+            cout<<c<<"\n";
+        }
+        
+        else{
+            c = (c-sum)%n;
+            cout<<c<<"\n";
+        }
+        
+        
+        
+        
+    }
+    
+    
+    return 0;
+}
+
