@@ -1,0 +1,78 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+    
+    int n;
+    int counter=0,result;
+    cin>>n;
+    int left,right,bot,top;
+    
+    int arr[n][n];
+    
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            
+            cin>>arr[i][j];
+            
+           
+            
+        }
+    }
+    
+    
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            
+            if(j==0){
+                left =0;
+            }
+            else{
+                left = arr[i][j-1];
+            }
+            if(j==n-1){
+                right=0;
+            }
+            else{
+                right = arr[i][j+1];
+            }
+            if(i==n-1){
+                bot=0;
+        
+            }
+            else{
+                bot = arr[i+1][j];
+            }
+            if(i==0){
+                top=0;
+            }
+            else{
+                top = arr[i-1][j];
+            }
+            result=0;
+            result = top + bot + right + left;
+            //cout<<result<<" ";
+            bool flag = false;
+            for(int k=2;k<result;k++){
+                if(result%k==0){
+                    flag = false;
+                    //cout<<"um";
+                    break;
+                }
+                else{
+                    //cout<<"ok";
+                    flag = true;
+                }
+            }
+            if(flag ==true){
+                counter++;
+            }
+            
+        }
+    }
+    
+    cout<<counter;
+    
+    return 0;
+}
